@@ -102,6 +102,19 @@ int ofxParagraph::getStringHeight(std::string s)
     return mFont->height(s);
 }
 
+ofVec2f ofxParagraph::getLastLetterPosition(){
+    ofVec2f temp;
+
+    if(mWords.size() > 0){
+        temp.set(mWords[mWords.size()-1].rect.x + mWords[mWords.size()-1].rect.width + mFont->width("W"),mWords[mWords.size()-1].rect.y + mLeading + mBorderPadding + mFont->getLineHeight()*10);
+    }else{
+        temp.set(0,0);
+    }
+
+
+    return temp;
+}
+
 void ofxParagraph::setPosition(int x, int y)
 {
     this->x = x;

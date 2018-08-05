@@ -65,6 +65,8 @@ class ofxParagraph{
         void drawBorder(bool draw);
         void drawBorder(ofColor color);
         void drawWordBoundaries(bool draw = true);
+
+        ofVec2f getLastLetterPosition();
     
     private:
     
